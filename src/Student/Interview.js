@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
-import env from "../enviroinment";
+import env from "../Backendurl";
 import "../StudentCSS/studentTask.css";
 import Table from "react-bootstrap/Table";
 
@@ -55,7 +55,7 @@ function Interview() {
           </tbody>
         </Table>
       </div>
-      <h4 style={{color:"red"}}>Teacher Will Schedule Interview</h4>
+      <h4 style={{ color: "red" }}>Teacher Will Schedule Interview</h4>
     </div>
   );
 }

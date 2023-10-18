@@ -1,7 +1,7 @@
 import React, {  } from "react";
 import "../StudentCSS/TeacherDash.css";
 
-import Lines from "./Lines";
+import Lines from "./art";
 
 function Dashboard() {
 
