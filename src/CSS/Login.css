@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.login-wrapper {
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  margin-top: 6rem;
+  color: #ffffff;
+}
+
+form {
+  width: 60vw;
+  display: inline-block;
+  flex-wrap: wrap;
+  margin: 2rem;
+}
+
+.Adjust {
+  width: 80vw;
+  display: inline-block;
+  flex-wrap: wrap;
+  margin: 2rem;
+}
+
+.wallpaper {
+  background-image: url(../assets/imgs/240_F_333658481_YbLwzxEkc5enDxFS3IP6y4fub0LtIpkh.jpg);
+  height: 100vh;
+}
+
+.wallpaper1 {
+  background-image: url(../assets/imgs/uwp2886922.webp);
+  height: 100vh;
+}
+
+.wallpaper2 {
+  background-image: url(../assets/imgs/uwp2857961.gif);
+  height: 100vh;
+}
+
+.wallpaper3 {
+  background-image: url(../assets/imgs/uwp2886922.webp);
+  height: 100vh;
+}
+
+.verti {
+  margin-left: 47%;
+}
+
+.Guidelines {
+  margin-top: 2rem;
+  font-weight: 450;
+  color: #060606;
+}
+
+.openModalBtn {
+  width: 200px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ff8c00;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.openModalBtn:hover {
+  background-color: #ff6f00;
+}
+
+/* Add additional animations, gradients, and other styles as per your project requirements */
