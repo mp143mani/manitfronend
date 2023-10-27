@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
 import "../CSS/Login.css";
 import ModalNew from "../Instruction";
-// import Modal from "../Modal";
+
 
 function Login() {
   let [email, setEmail] = useState("");

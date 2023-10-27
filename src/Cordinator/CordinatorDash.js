@@ -1,8 +1,5 @@
 import React from "react";
-// import Button from "react-bootstrap/Button"
-//  import axios from "axios";
-//   import env from "../enviroinment";
-// import "../CSS/CordinatorCSS.css";
+
 import "../CSS/TeacherDash.css";
 import CoSidebar from "./Sidebar";
 import CoRegister from "./Cordinatorregister";
@@ -10,18 +7,6 @@ import { Outlet, Route, Routes } from "react-router-dom";
 
 function CordinatorDash() {
   return (
-    // <div className="container-fluid">
-    //   <div><CoSidebar /></div>
-    //   <div className="login-wrapper">
-    //      <div><h1>Cordinator Dashboard</h1></div>
-    //       <div>
-    //       <Routes>
-    //         <Route path="/" element={<CoRegister />} />
-    //       </Routes>
-    //       </div>
-    //   </div>
-    // </div>
-
     <div className=" bag ">
       <div className="row take ">
         <div className="take col-md-2 col-sm-2 col-lg-2">

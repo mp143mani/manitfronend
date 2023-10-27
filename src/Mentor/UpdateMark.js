@@ -59,7 +59,7 @@ export default function UpdateMark() {
         marks,
       }
     );
-    // {fun.loadData}
+
     if (res.data.statusCode === 200) {
       notify();
     }
