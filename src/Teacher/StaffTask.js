@@ -1,10 +1,10 @@
-import React, { useEffect,useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 import { Button, FormGroup, Input, Label } from "reactstrap";
-import env from "../enviroinment";
+import env from "../Backendurl";
 import { useNavigate } from "react-router-dom";
-import "../StudentCSS/TeacherDash.css";
+import "../CSS/TeacherDash.css";
 import Table from "react-bootstrap/Table";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -20,49 +20,47 @@ function StaffTask() {
     if (batch && task) {
       let res = await axios.post(`${env.apiurl}/task/taskSend`, {
         batch,
-        task
+        task,
       });
       if (res.data.statusCode === 200 || 204) {
-        notify()
+        notify();
       }
-    }
-    else {
-      notifyWarn()
+    } else {
+      notifyWarn();
     }
 
-    setBatch('');
-    setTask('');
+    setBatch("");
+    setTask("");
   };
 
-  const notify =  () => {
-    toast.success(' Updatation done!!!!!', {
-     position: "top-center",
-     autoClose: 5000,
-     hideProgressBar: false,
-     closeOnClick: true,
-     pauseOnHover: true,
-     draggable: true,
-     progress: undefined,
-     theme: "light",
-     });
-   ;
- };
+  const notify = () => {
+    toast.success(" Updatation done!!!!!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
 
- const notifyWarn =  () => {
- toast.error('Fill All Mandatory Inputs', {
-  position: "top-right",
-  autoClose: 5000,
-  hideProgressBar: false,
-  closeOnClick: true,
-  pauseOnHover: true,
-  draggable: true,
-  progress: undefined,
-  theme: "light",
-  });
-}
+  const notifyWarn = () => {
+    toast.error("Fill All Mandatory Inputs", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
 
   let handleTaskUpdate = async (id) => {
-    console.log(id)
+    console.log(id);
     navigate("/updateMark/" + id);
   };
 
@@ -73,21 +71,16 @@ function StaffTask() {
     } else {
       alert(res.data.message);
     }
-
   };
-
-
 
   useEffect(() => {
     loadData();
-   
   }, [data]);
 
   return (
-   
-      <div >
-      <div >
-      <h5>Enter Batch and Task, to Assign task to the students</h5>
+    <div>
+      <div>
+        <h5>Enter Batch and Task, to Assign task to the students</h5>
         <Form>
           <FormGroup>
             <Label for="batch">Batch</Label>
@@ -109,8 +102,8 @@ function StaffTask() {
           </FormGroup>
           <Button onClick={() => handleSubmit()}>Submit</Button>
         </Form>
-        </div>
-        <div  className="taskTable">
+      </div>
+      <div className="taskTable">
         <h5>Student Task Updates</h5>
         <Table striped responsive="md" bordered hover ref={tableRef}>
           <thead>
@@ -131,9 +124,9 @@ function StaffTask() {
                   <td>{i + 1}</td>
                   <td>{e.email}</td>
                   <td>{e.batch}</td>
-                  <td >{e.task}</td>
-                   <td>{e.taskSolution}</td> 
-                   <td>{e.marks}</td>
+                  <td>{e.task}</td>
+                  <td>{e.taskSolution}</td>
+                  <td>{e.marks}</td>
                   <td>
                     <Button
                       color="primary"
@@ -145,15 +138,12 @@ function StaffTask() {
                 </tr>
               );
             })}
-
-            
           </tbody>
         </Table>
         <h5>Student Need to respond on task then data will fetch in table</h5>
-        </div>
-        <ToastContainer />
       </div>
-  
+      <ToastContainer />
+    </div>
   );
 }
 

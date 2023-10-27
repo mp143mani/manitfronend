@@ -3,11 +3,11 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap";
 import axios from "axios";
-import env from "../enviroinment";
+import env from "../Backendurl";
 import { useNavigate } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
 import "../CSS/Login.css";
-import ModalNew from "../ModalNew";
+import ModalNew from "../Instruction";
 // import Modal from "../Modal";
 
 function Login() {
@@ -17,7 +17,6 @@ function Login() {
   let [toggle, setToggle] = useState(false);
   let [message, setMessage] = useState("");
   let navigate = useNavigate();
-
 
   let handleForgotpass = async () => {
     navigate("/Forgot");
@@ -63,8 +62,13 @@ function Login() {
     <>
       <div className="container-fluid wallpaper">
         <div className="login-wrapper ">
-    <a href="https://ibb.co/ggCxdvG"><img src="https://i.ibb.co/dKyRtbS/Logo-0268ac4ba8f24691976d.png" alt="Logo-0268ac4ba8f24691976d" border={0} /></a>
-
+          <a href="https://ibb.co/ggCxdvG">
+            <img
+              src="https://i.ibb.co/dKyRtbS/Logo-0268ac4ba8f24691976d.png"
+              alt="Logo-0268ac4ba8f24691976d"
+              border={0}
+            />
+          </a>
 
           <h1>Welcome ManiTechWorld!</h1>
           <p>Login to Here</p>
@@ -101,9 +105,7 @@ function Login() {
             >
               Forgot Password
             </Button>
-           <ModalNew />
-
-           
+            <ModalNew />
           </Form>
           {toggle ? <Spinner animation="border" variant="primary" /> : <></>}
           {message ? (
@@ -114,41 +116,41 @@ function Login() {
         </div>
       </div>
       <div
-              className="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h5 className="modal-title" id="exampleModalLabel">
-                      Modal title
-                    </h5>
-                    <Button
-                      type="button"
-                      className="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></Button>
-                  </div>
-                  <div className="modal-body">...</div>
-                  <div className="modal-footer">
-                    <button
-                      type="button"
-                      className="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button type="button" className="btn btn-primary">
-                      Save changes
-                    </button>
-                  </div>
-                </div>
-              </div>
+        className="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">
+                Modal title
+              </h5>
+              <Button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></Button>
             </div>
+            <div className="modal-body">...</div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" className="btn btn-primary">
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

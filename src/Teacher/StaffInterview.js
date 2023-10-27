@@ -2,8 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 import { Button, FormGroup, Input, Label } from "reactstrap";
-import env from "../enviroinment";
-import "../StudentCSS/TeacherDash.css";
+import env from "../Backendurl";
+import "../CSS/TeacherDash.css";
 import Table from "react-bootstrap/Table";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -20,7 +20,6 @@ function StaffInterview() {
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
-
     if (batch && interviewTopic && email && date) {
       let res = await axios.post(`${env.apiurl}/interview/sendInterviewData`, {
         batch,
@@ -29,14 +28,13 @@ function StaffInterview() {
         date,
       });
       if (res.data.statusCode === 200 || 204) {
-        notify()
+        notify();
       }
+    } else {
+      notifyWarn();
     }
-    else {
-      notifyWarn()
-    }
-    setBatch('');
-    setInterviewTopic('');
+    setBatch("");
+    setInterviewTopic("");
   };
 
   let loadData = async () => {
@@ -62,37 +60,35 @@ function StaffInterview() {
     }
   };
 
-  const notify =  () => {
-    toast.success(' Updatation done!!!!!', {
-     position: "top-center",
-     autoClose: 5000,
-     hideProgressBar: false,
-     closeOnClick: true,
-     pauseOnHover: true,
-     draggable: true,
-     progress: undefined,
-     theme: "light",
-     });
-   ;
- };
+  const notify = () => {
+    toast.success(" Updatation done!!!!!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
 
- const notifyWarn =  () => {
- toast.error('Fill All Mandatory Inputs', {
-  position: "top-right",
-  autoClose: 5000,
-  hideProgressBar: false,
-  closeOnClick: true,
-  pauseOnHover: true,
-  draggable: true,
-  progress: undefined,
-  theme: "light",
-  });
-}
+  const notifyWarn = () => {
+    toast.error("Fill All Mandatory Inputs", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
 
   useEffect(() => {
     loadData();
     loadEmailData();
-    
   }, [values]);
 
   return (
@@ -121,7 +117,6 @@ function StaffInterview() {
                     </select>
                   </div>
                 </FormGroup>
-            
               </div>
               <div className="col">
                 <FormGroup>

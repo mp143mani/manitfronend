@@ -3,7 +3,7 @@ import React from "react";
 //  import axios from "axios";
 //   import env from "../enviroinment";
 // import "../CSS/CordinatorCSS.css";
-import "../StudentCSS/TeacherDash.css";
+import "../CSS/TeacherDash.css";
 import CoSidebar from "./CoSidebar";
 import CoRegister from "./CoRegister";
 import { Outlet, Route, Routes } from "react-router-dom";

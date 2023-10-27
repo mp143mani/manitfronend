@@ -2,8 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 import { Button, FormGroup, Input, Label } from "reactstrap";
-import env from "../enviroinment";
-import "../StudentCSS/TeacherDash.css";
+import env from "../Backendurl";
+import "../CSS/TeacherDash.css";
 import Table from "react-bootstrap/Table";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,7 +17,6 @@ function StaffClass() {
   let tableRef = useRef(null);
 
   const handleSubmit = async () => {
-    
     if (batch && meetLink && topic && date) {
       let res = await axios.post(`${env.apiurl}/class/sendclassData`, {
         batch,
@@ -26,16 +25,15 @@ function StaffClass() {
         date,
       });
       if (res.data.statusCode === 200 || 204) {
-        notify()
+        notify();
       }
-    }
-    else {
-      notifyWarn()
+    } else {
+      notifyWarn();
     }
 
-    setTopic('');
-    setBatch('');
-    setMeetLink('');
+    setTopic("");
+    setBatch("");
+    setMeetLink("");
   };
 
   let loadData = async () => {
@@ -47,36 +45,34 @@ function StaffClass() {
     }
   };
 
-  const notify =  () => {
-    toast.success(' Updatation done!!!!!', {
-     position: "top-center",
-     autoClose: 5000,
-     hideProgressBar: false,
-     closeOnClick: true,
-     pauseOnHover: true,
-     draggable: true,
-     progress: undefined,
-     theme: "light",
-     });
-   ;
- };
+  const notify = () => {
+    toast.success(" Updatation done!!!!!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
 
-  const notifyWarn =  () => {
-    toast.error('Fill All Mandatory Inputs', {
-     position: "top-right",
-     autoClose: 5000,
-     hideProgressBar: false,
-     closeOnClick: true,
-     pauseOnHover: true,
-     draggable: true,
-     progress: undefined,
-     theme: "light",
-     });
-   }
- 
+  const notifyWarn = () => {
+    toast.error("Fill All Mandatory Inputs", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
 
   useEffect(() => {
-    loadData();  
+    loadData();
   }, [data]);
 
   return (
@@ -86,7 +82,7 @@ function StaffClass() {
         <Form>
           <div className="col">
             <div className="row">
-            <div className="col">
+              <div className="col">
                 <FormGroup>
                   <Label for="topic">Topic</Label>
                   <Input
@@ -159,7 +155,9 @@ function StaffClass() {
                   <td>{e.topic}</td>
                   <td>{e.batch}</td>
                   <td>{e.date}</td>
-                  <td><a href = {e.meetLink}>{e.meetLink}</a></td>
+                  <td>
+                    <a href={e.meetLink}>{e.meetLink}</a>
+                  </td>
                 </tr>
               );
             })}

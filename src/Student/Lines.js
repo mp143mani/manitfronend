@@ -1,14 +1,17 @@
-
-
 import React, { useState, useEffect } from "react";
-import { Chart as ChartJS, BarElement,CategoryScale,LinearScale } from "chart.js";
+import {
+  Chart as ChartJS,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+} from "chart.js";
 import axios from "axios";
-import env from "../enviroinment";
-import "../StudentCSS/TeacherDash.css";
+import env from "../Backendurl";
+import "../CSS/TeacherDash.css";
 
 import { Bar } from "react-chartjs-2";
 
-ChartJS.register(CategoryScale,LinearScale,BarElement);
+ChartJS.register(CategoryScale, LinearScale, BarElement);
 let token = localStorage.getItem("token");
 
 const Lines = () => {
@@ -16,15 +19,20 @@ const Lines = () => {
   const [query, setQuery] = useState({});
   const [interview, setInterview] = useState({});
   const [webcode, setWebcode] = useState({});
-  const [task, setTask] = useState({}); 
-      console.log("chart", chart);
-      
+  const [task, setTask] = useState({});
+  console.log("chart", chart);
+
   var data = {
-    labels: ["No of Webcode Task Solved", "No of Interview Scheduled", "No of Task Solved","No Of Query Raised"],
+    labels: [
+      "No of Webcode Task Solved",
+      "No of Interview Scheduled",
+      "No of Task Solved",
+      "No Of Query Raised",
+    ],
     datasets: [
       {
         label: "Student",
-        data: [webcode, interview, task,query],
+        data: [webcode, interview, task, query],
         backgroundColor: [
           "rgba(247, 13, 134, 0.8)",
           " rgba(72, 122, 180, .7);",
@@ -44,7 +52,7 @@ const Lines = () => {
         borderWidth: 1,
       },
     ],
-  }
+  };
 
   var options = {
     maintainAspectRatio: false,
@@ -52,39 +60,45 @@ const Lines = () => {
     legend: {
       labels: {
         fontSize: 25,
-        
       },
     },
   };
 
   let loadData = async () => {
     let res1 = await axios.get(`${env.apiurl}/taskSolution/getNoOFTaskSolved`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     let res2 = await axios.get(`${env.apiurl}/interview/getNoOFIntSchedu`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     let res3 = await axios.get(`${env.apiurl}/webcode/getNoOfWebSolved`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     let res4 = await axios.get(`${env.apiurl}/query/getNoOfQueryRaised`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-    if ((res1.data.statusCode === 200 || 304)||(res2.data.statusCode === 200 || 304)||(res3.data.statusCode === 200 || 304)||(res4.data.statusCode === 200 || 304)) {
-    
-      setQuery(res4.data.query)
-      setInterview(res2.data.interview)
-      setWebcode(res3.data.webcode)
-      setTask(res1.data.task)
-      
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    if (
+      res1.data.statusCode === 200 ||
+      304 ||
+      res2.data.statusCode === 200 ||
+      304 ||
+      res3.data.statusCode === 200 ||
+      304 ||
+      res4.data.statusCode === 200 ||
+      304
+    ) {
+      setQuery(res4.data.query);
+      setInterview(res2.data.interview);
+      setWebcode(res3.data.webcode);
+      setTask(res1.data.task);
     } else {
       alert("Data Not Loaded");
     }
@@ -92,8 +106,7 @@ const Lines = () => {
 
   useEffect(() => {
     loadData();
-  }, [query,interview,webcode,task]);
-
+  }, [query, interview, webcode, task]);
 
   return (
     <div className="bags">

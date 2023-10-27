@@ -5,7 +5,7 @@ import React, { useState } from "react";
 // import env from "../enviroinment";
 // import { useNavigate } from "react-router-dom";
 // import Spinner from "react-bootstrap/Spinner";
-import "../StudentCSS/student.css";
+import "../CSS/student.css";
 import { Link } from "react-router-dom";
 
 import {

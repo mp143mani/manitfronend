@@ -2,7 +2,7 @@ import React, {   useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Container, Form, FormGroup, Input, Label } from "reactstrap";
 import axios from 'axios'
-import env from '../enviroinment'
+import env from '../Backendurl'
 
 export default function Register() {
 

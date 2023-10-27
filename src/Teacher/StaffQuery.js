@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
-import env from "../enviroinment";
-import "../StudentCSS/TeacherDash.css";
+import env from "../Backendurl";
+import "../CSS/TeacherDash.css";
 import Table from "react-bootstrap/Table";
 import { Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
@@ -10,8 +10,6 @@ function StaffQuery() {
   let [data, setData] = useState([]);
   let tableRef = useRef(null);
   const navigate = useNavigate();
-
-  
 
   let loadQueries = async () => {
     console.log("1");
@@ -35,13 +33,12 @@ function StaffQuery() {
 
   useEffect(() => {
     loadQueries();
-    
   }, [data]);
   return (
     <>
       <div className="taskTable">
         <h3>Student Query Updates</h3>
-        <Table  striped responsive bordered hover ref={tableRef}>
+        <Table striped responsive bordered hover ref={tableRef}>
           <thead>
             <tr>
               <th>
@@ -82,7 +79,7 @@ function StaffQuery() {
               </th>
             </tr>
           </thead>
-           <tbody>
+          <tbody>
             {data.map((e, i) => {
               return (
                 <tr key={i}>
@@ -108,7 +105,7 @@ function StaffQuery() {
                 </tr>
               );
             })}
-          </tbody> 
+          </tbody>
         </Table>
       </div>
     </>
@@ -116,4 +113,3 @@ function StaffQuery() {
 }
 
 export default StaffQuery;
-

@@ -2,7 +2,7 @@ import React, {  } from "react";
 import {  Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 // import "../StudentCSS/studentTask.css";
-import "../StudentCSS/TeacherDash.css";
+import "../CSS/TeacherDash.css";
 
 function StudentDash() {
   return (

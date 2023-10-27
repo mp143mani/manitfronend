@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button, Container, Form, FormGroup, Input, Label } from "reactstrap";
 import axios from "axios";
-import env from "../enviroinment";
-import "../StudentCSS/UpWebcodeStaff.css";
+import env from "../Backendurl";
+import "../CSS/UpWebcodeStaff.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

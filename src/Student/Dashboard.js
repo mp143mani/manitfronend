@@ -1,5 +1,5 @@
 import React, {  } from "react";
-import "../StudentCSS/TeacherDash.css";
+import "../CSS/TeacherDash.css";
 
 import Lines from "./Lines";
 

@@ -10,7 +10,7 @@
   width: 100vw;
   text-align: center;
   margin-top: 6rem;
-  color: #ffffff;
+  color: #000000;
 }
 
 form {
@@ -27,25 +27,7 @@ form {
   margin: 2rem;
 }
 
-.wallpaper {
-  background-image: url(../assets/imgs/240_F_333658481_YbLwzxEkc5enDxFS3IP6y4fub0LtIpkh.jpg);
-  height: 100vh;
-}
 
-.wallpaper1 {
-  background-image: url(../assets/imgs/uwp2886922.webp);
-  height: 100vh;
-}
-
-.wallpaper2 {
-  background-image: url(../assets/imgs/uwp2857961.gif);
-  height: 100vh;
-}
-
-.wallpaper3 {
-  background-image: url(../assets/imgs/uwp2886922.webp);
-  height: 100vh;
-}
 
 .verti {
   margin-left: 47%;

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button, Container, Form, FormGroup, Input, Label } from "reactstrap";
 import axios from "axios";
-import env from "../enviroinment";
-import "../StudentCSS/UpWebcodeStaff.css";
+import env from "../Backendurl";
+import "../CSS/UpWebcodeStaff.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -28,20 +28,17 @@ export default function UpWebcodeMark() {
   };
 
   const handleSubmit = async () => {
-     await axios.put(
-      `${env.apiurl}/webcode/updateWebMarks/${params.id}`,
-      {
-        email,
-        batch,
-        webcodeTask,
-        webcodeSolution,
-        marks,
-      }
-    );
+    await axios.put(`${env.apiurl}/webcode/updateWebMarks/${params.id}`, {
+      email,
+      batch,
+      webcodeTask,
+      webcodeSolution,
+      marks,
+    });
   };
 
-  const notify =  () => {
-     toast.success(' Updatation done!!!!!', {
+  const notify = () => {
+    toast.success(" Updatation done!!!!!", {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -50,15 +47,12 @@ export default function UpWebcodeMark() {
       draggable: true,
       progress: undefined,
       theme: "light",
-      });
-    ;
+    });
   };
 
   const handleBack = () => {
-    navigate("/teacherDash/interview")
-    
+    navigate("/teacherDash/interview");
   };
-
 
   useEffect(() => {
     getData();
@@ -125,7 +119,9 @@ export default function UpWebcodeMark() {
             type="text"
           />
         </FormGroup>
-        <Button className="mx-2 mt-2" style={{"background" : "green","width":"6rem"}}
+        <Button
+          className="mx-2 mt-2"
+          style={{ background: "green", width: "6rem" }}
           onClick={() => {
             handleSubmit();
             notify();
@@ -133,11 +129,12 @@ export default function UpWebcodeMark() {
         >
           Submit
         </Button>
-        <Button className="mx-2 mt-2" style={{"background" : "blue","width":"6rem"}}
+        <Button
+          className="mx-2 mt-2"
+          style={{ background: "blue", width: "6rem" }}
           onClick={() => {
             handleBack();
           }}
-         
         >
           Back
         </Button>
