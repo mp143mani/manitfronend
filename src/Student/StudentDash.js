@@ -1,6 +1,6 @@
 import React, {  } from "react";
 import {  Outlet } from "react-router-dom";
-import Sidebar from "./Sidebar";
+import Sidebar from "./StudentSidebar";
 // import "../StudentCSS/studentTask.css";
 import "../CSS/TeacherDash.css";
 
