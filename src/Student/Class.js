@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import env from "../Backendurl";
-import "../StudentCSS/TeacherDash.css";
+// import "../StudentCSS/TeacherDash.css";
 import Table from "react-bootstrap/Table";
 
 function Class() {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import StaffSidebar from "./MentorSidebar";
-import "../StudentCSS/TeacherDash.css";
+// import "../StudentCSS/TeacherDash.css";
 
 function TeacherDash() {
   return (

@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import axios from "axios";
 import { Button, FormGroup, Input, Label } from "reactstrap";
 import env from "../Backendurl";
-import "../StudentCSS/TeacherDash.css";
+// import "../StudentCSS/TeacherDash.css";
 import Table from "react-bootstrap/Table";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

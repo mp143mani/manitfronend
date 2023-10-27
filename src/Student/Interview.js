@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import env from "../Backendurl";
-import "../StudentCSS/studentTask.css";
+// import "../StudentCSS/studentTask.css";
 import Table from "react-bootstrap/Table";
 
 function Interview() {

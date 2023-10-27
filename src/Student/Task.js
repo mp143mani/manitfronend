@@ -9,7 +9,7 @@ import { FormGroup, Input, Label } from "reactstrap";
 import Form from "react-bootstrap/Form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "../StudentCSS/studentTask.css";
+// import "../StudentCSS/studentTask.css";
 
 function Task() {
   let [data, setData] = useState([]);

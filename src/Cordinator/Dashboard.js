@@ -1,5 +1,6 @@
 import React from "react";
-import "../StudentCSS/TeacherDash.css";
+
+// import "../StudentCSS/TeacherDash.css";
 import CoSidebar from "./CoSidebar";
 import CoRegister from "./Registration";
 import { Outlet, Route, Routes } from "react-router-dom";

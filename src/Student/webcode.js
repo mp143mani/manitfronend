@@ -5,7 +5,7 @@ import axios from "axios";
 import env from "../Backendurl";
 import Table from "react-bootstrap/Table";
 import { Input } from "reactstrap";
-import "../StudentCSS/studentTask.css";
+// import "../StudentCSS/studentTask.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FormGroup, Label } from "reactstrap";

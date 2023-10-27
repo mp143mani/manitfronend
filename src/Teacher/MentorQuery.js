@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import env from "../Backendurl";
-import "../StudentCSS/TeacherDash.css";
+// import "../StudentCSS/TeacherDash.css";
 import Table from "react-bootstrap/Table";
 import { Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";

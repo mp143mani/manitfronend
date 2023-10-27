@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 import env from "../Backendurl";
-import "../StudentCSS/student.css";
+// import "../../StudentCSS/student.css";
 import { Button, FormGroup, Input, Label } from "reactstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

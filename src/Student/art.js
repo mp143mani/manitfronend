@@ -7,7 +7,7 @@ import {
 } from "chart.js";
 import axios from "axios";
 import env from "../Backendurl";
-import "../StudentCSS/TeacherDash.css";
+// import "../StudentCSS/TeacherDash.css";
 
 import { Bar } from "react-chartjs-2";
 
